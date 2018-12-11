@@ -9,12 +9,5 @@
 
 ## demo
 
-前台地址 `www.51siyuan.cn`
-
-后台地址: `www.51siyuan.cn/admin`  帐号 `demo` 密码 `111111`
-
-## doc
-
-[更多文档](http://www.51siyuan.cn/book/2)
 
 
