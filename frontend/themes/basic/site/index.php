@@ -14,17 +14,20 @@ use common\models\Article;
                 'class' => 'mb15',
             ],
         ]) ?>
+         <!--文章分类-->
         <div class="row">
             <?php if ($this->beginCache('category-article-list', ['dependency' => ['class' => 'yii\caching\DbDependency', 'sql' => "SELECT MAX(updated_at) FROM {{%article}}"]])): ?>
         <?php foreach ($categories as $category):?>
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
+                        <!--分类名-->
                         <h3 class="panel-title"><span class="glyphicon glyphicon-list" aria-hidden="true" style="margin-right: 10px"></span><?= $category->title ?></h3>
                         <div class="pull-right"><a href="<?= Url::to(['/article/index', 'cate' => $category->slug]) ?>" target="_blank">更多 >></a></div>
                     </div>
                     <div class="panel-body">
                         <ul class="category-article-list">
+                            <!--分类文章-->
                             <?php
                                 $list = Article::find()->published()->andWhere(['category_id' => $category->id])->orderBy('id desc')->limit(5)->all();
                             foreach ($list as $item) :
